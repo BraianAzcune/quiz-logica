@@ -5,7 +5,7 @@ import MenuEjercicios from "./MenuEjercicios";
 import { ProblemCard } from "./problemCard";
 import { Score } from "./score";
 import useStore from "./useStore";
-
+import { PerfectScore } from "./perfectScore";
 const App = () => {
   // Estado para almacenar el arreglo de problemas del ejercicio seleccionado
   const [selectedProblems, setSelectedProblems] = useState(null);
@@ -58,6 +58,7 @@ const App = () => {
       )}
 
       <Score />
+      <PerfectScore />
     </Box>
   );
 };
