@@ -1,5 +1,5 @@
 // App.jsx
-import React, { useState } from "react";
+import { useState } from "react";
 import { Box, Typography, Grid, Button } from "@mui/material";
 import MenuEjercicios from "./MenuEjercicios";
 import { ProblemCard } from "./problemCard";
@@ -12,6 +12,7 @@ const App = () => {
 
   // Obtenemos la acción para actualizar el total de problemas desde el store
   const setTotalProblems = useStore((state) => state.setTotalProblems);
+  const resetStore = useStore((state) => state.reset);
 
   // Callback que se ejecuta al seleccionar un ejercicio en el menú
   const handleSelectExercise = (problemArray) => {
@@ -24,7 +25,7 @@ const App = () => {
   // Permite volver al menú y reinicia el total de problemas
   const handleResetExercise = () => {
     setSelectedProblems(null);
-    setTotalProblems(0);
+    resetStore();
   };
 
   return (
